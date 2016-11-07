@@ -1,0 +1,200 @@
+#datepicker {
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+
+.wrapper {
+  width: 154px;
+  vertical-align: middle;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.72);
+  border-radius: 7px;
+  background-color: #eef1f3;
+}
+
+.time-row .time-row-header {
+  text-align: left;
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 42px;
+  line-height: 42px;
+  width: 100%;
+  color: #303031;
+  cursor: pointer;
+}
+
+.time-row .time-row-header .header-lable {
+  display: inline-block;
+  width: 47px;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0 0 0 16px;
+  opacity: 0.3;
+}
+
+.time-row .time-row-header .header-value {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.time-row:first-of-type .time-row-header {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  transition: all 0.5s step-end 0s
+}
+
+.time-row:last-of-type .time-row-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: all 0.5s step-end 0s
+}
+
+.time-row:last-of-type.active .time-row-header {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: all 0.5s step-start 0s
+} 
+
+.time-row .time-row-body {
+  overflow: hidden;
+  // background-color: #eef1f3;
+  height: 0px;
+  width: 100%;
+  transition: all 0.5s ease-in-out 0s; 
+}
+
+.time-row.active .time-row-body {
+  height: 369px;
+  transition: all 0.5s ease-in-out 0s; 
+}
+
+.time-row:last-of-type.active .time-row-body {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.time-month {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  z-index: 50;
+  color: rgba(0, 0, 0, 0.3);
+  font-style: 14px;  
+  font-weight: normal;
+}
+
+.time-month-before {
+  line-height: 34px;
+  height: 34px;
+  background-color: #eef1f3;
+  background: linear-gradient(to top, rgba(238, 241, 243, 0) 0%, rgba(238, 241, 243, 0.9) 20%, rgba(238, 241, 243, 1) 50%);
+}
+
+.time-month-after {
+  line-height: 27px;
+  height: 27px;
+  background-color: #eef1f3;
+  background: linear-gradient(to bottom, rgba(238, 241, 243, 0) 0%, rgba(238, 241, 243, 0.9) 20%, rgba(238, 241, 243, 1) 50%);
+}
+
+.current-wrapper {
+  overflow-y: hidden;
+  z-index: 20;
+  height: 369px;
+  width: 100%;
+  margin-top: -34px;
+  margin-bottom: -27px;
+}
+
+.time-current {
+  position: relative;
+  padding-top: 34px;
+  padding-bottom: 27px;
+  top: 0px;
+}
+
+.item-of-current-time {
+  z-index: 30;
+  height: 28px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  // line-height: 28px;
+  color: #000;
+  text-align: center;
+}
+
+.item-of-current-time:not(.disabled) {
+  cursor: pointer;
+}
+
+.item-of-current-time.disabled {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.item-of-current-time:before,
+.item-of-current-time:after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 10px;
+  position: relative;
+  background-color: #000;
+  opacity: 0.1;
+  top: 13px;
+}
+
+.item-of-current-time:before {
+  left: 20px;
+  float: left;
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+.item-of-current-time:after {
+  left: -20px;
+  float: right;
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+.item-of-current-time:not(.disabled):not(.active):hover {
+  font-size: 18px;
+  // transition: all 0.1s ease-in-out 0s;
+}
+
+.item-of-current-time:not(.disabled):not(.active):hover:before,
+.item-of-current-time:not(.disabled):not(.active):hover:after {
+  opacity: 0.2;
+  transition: all 0.1s ease-in-out 0s;
+}
+
+.item-of-current-time.active:before,
+.item-of-current-time.active:after {
+  background-color: #42a2e1;
+  opacity: 1;
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+.item-of-current-time div {
+  // content: "";
+  // display: block;
+  display: inline-block;
+  height: 38px;
+  width: 38px;
+  margin: -6px auto -4px auto;
+  line-height: 38px;
+  // left: 58px;
+  // position: relative;
+  background-image: none;
+}
+
+.item-of-current-time.active div {
+  background-image: url(./focus.png);
+}
